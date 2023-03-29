@@ -20,6 +20,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">Titolo</th>
                     <th scope="col">Slug</th>
+                    <th scope="col">Categoria</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
@@ -29,6 +30,7 @@
                         <th scope="row">{{ $post->id }}</th>
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->slug }}</td>
+                        <td>{{ $post->category ? $post->category->name : 'Nessuna Categoria'}}</td>
                         <td>
                             <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-info">
                                 Dettagli
