@@ -7,8 +7,12 @@ use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 
+// Helpers
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+
+// Models
+use App\Models\Category;
 
 class PostController extends Controller
 {
