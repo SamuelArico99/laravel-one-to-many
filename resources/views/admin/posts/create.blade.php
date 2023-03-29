@@ -38,6 +38,14 @@
                         <textarea class="form-control" id="content" required maxlength="4096" name="content" rows="3"></textarea>
                     </div>
                     <div class="mb-3">
+                        <select name="category_id" id="category_id">
+                            <option value="">Nessuna categoria</option>
+                            @foreach ($categories as $category)
+                             <option value="{{ $category->id }}" {{ old("category_id") == $category->id ? 'selected' : ''}}>{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-3">
                         <label for="formFile" class="form-label">Default file input example</label>
                         <input class="form-control" type="file" name="img" id="img" accept="image/*">
                     </div>
