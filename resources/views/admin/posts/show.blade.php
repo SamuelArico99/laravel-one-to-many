@@ -11,7 +11,12 @@
                 {{ $post->slug }}
             </h6>
             <h3>
-                Categoria: {{ $post->category ? $post->category->name : 'Nessuna categoria' }}
+                Categoria:
+                @if ($post->category)
+                   <a href="{{ route('admin.categories.show', $post->category->id) }}">{{ $post->category->name }}</a> 
+                @else
+                    Nessuna Categoria
+                @endif
             </h3>
             @if ($post->img)
                 <div>

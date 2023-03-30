@@ -20,17 +20,17 @@
                     <th scope="col">ID</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Slug</th>
-                    <th scope="col">?</th>
+                    <th scope="col">N. Articoli</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                     @foreach ($categories as $category)
                     <tr>
-                        <th scope="row">{{ $post->id }}</th>
+                        <th scope="row">{{ $category->id }}</th>
                         <td>{{ $category->name }}</td>
                         <td>{{ $category->slug }}</td>
-                        <td>?</td>
+                        <td>{{ $category->posts()->count() }}</td>
                         <td>
                             <a href="{{ route('admin.categories.show', $category->id) }}" class="btn btn-info">
                                 Dettagli

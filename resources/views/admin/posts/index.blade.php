@@ -30,7 +30,13 @@
                         <th scope="row">{{ $post->id }}</th>
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->slug }}</td>
-                        <td>{{ $post->category ? $post->category->name : 'Nessuna Categoria'}}</td>
+                        <td>                
+                          @if ($post->category)
+                            <a href="{{ route('admin.categories.show', $post->category->id) }}">{{ $post->category->name }}</a> 
+                          @else
+                             Nessuna Categoria
+                          @endif
+                        </td>
                         <td>
                             <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-info">
                                 Dettagli
